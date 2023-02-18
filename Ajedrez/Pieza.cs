@@ -9,7 +9,19 @@ namespace Ajedrez
     public abstract class Pieza
     {
         public Color Color { get; }
-        //public Posicion Posicion { get; set; }
+        public Posicion Posicion { get; }
+
+        //*TODO:1_INI
+        internal Pieza(Color color, Posicion posicion)
+        {
+            Color = color;
+            posicion = posicion;
+        }
+
+        /*TODO:1_END*/
+
+        public abstract bool MovimientoValido(Posicion OtraPosicion);
+       
     }
     public enum Color
     {
@@ -17,12 +29,6 @@ namespace Ajedrez
         Negro
     }
 
-    //protected Pieza(Color color, Posicion posicion)
-    //{
-    //    Color = color;
-    //    posicion = posicion;
-    //}
-
-
+    
 
 }
