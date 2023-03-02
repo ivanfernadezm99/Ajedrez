@@ -10,17 +10,26 @@ namespace Ajedrez
     {
         public Color Color { get; }
         public Posicion Posicion { get; }
-
+        
+        public string Nombre { get; set; }
+        
         //*TODO:1_INI
-        internal Pieza(Color color, Posicion posicion)
+        internal Pieza(Color color, Posicion posicion, Jugador jugador)
         {
             Color = color;
-            posicion = posicion;
+            Posicion = posicion;
+            //Nombre = nombre;
         }
 
         /*TODO:1_END*/
 
-        public abstract bool MovimientoValido(Posicion OtraPosicion);
+        public abstract bool MovimientoValido(Posicion otraPosicion);
+
+        //Establece si alguna vez se movió
+        public bool SeMovio
+        {
+            get; set;
+        }
        
     }
     public enum Color
@@ -28,6 +37,8 @@ namespace Ajedrez
         Blanco,
         Negro
     }
+
+    
 
     
 
